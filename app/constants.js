@@ -1,3 +1,23 @@
+const PAD_ORDER = [
+  {"name": "PAD 01", "position": "top left shoulder"},
+  {"name": "PAD 02", "position": "top right shoulder"},
+  {"name": "PAD 03", "position": "top left"},
+  {"name": "PAD 04", "position": "top middle"},
+  {"name": "PAD 05", "position": "top right"},
+  {"name": "PAD 06", "position": "bottom left"},
+  {"name": "PAD 07", "position": "bottom middle"},
+  {"name": "PAD 08", "position": "bottom right"},
+  {"name": "EXT 1A", "position": "external pad 1 left input"},
+  {"name": "EXT 1B", "position": "external pad 1 right input"},
+  {"name": "EXT 2", "position": "external pad 2"},
+  {"name": "BASS", "position": "external bass drum pedal"},
+  {"name": "HAT OPE", "position": "external hi-hat pedal open"},
+  {"name": "HAT MID", "position": "external hi-hat pedal middle"},
+  {"name": "HAT CLO", "position": "external hi-hat pedal closed"},
+  {"name": "HAT CHK", "position": "external hi-hat pedal"},
+  {"name": "HAT SPL", "position": "external hi-hat pedal splash"},
+]
+
 const INTERNAL_SOUNDS = [
   '22AcBd1',
   '22AcBd2',
