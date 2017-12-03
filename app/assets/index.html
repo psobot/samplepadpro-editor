@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>SamplePad Pro Editor</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js"></script>
+  <script>require('initialize');</script>
+</head>
+<body>
+  <div class="brunch">
+    <body>
+      <div class="input">
+        <input type="file" id="files" name="files[]" multiple />
+        <div id="drop_zone">Drop .kit files here</div>
+        <output id="list"></output>
+      </div>
+      <div class="output">
+        <form onsubmit="downloadCurrentFile()">
+          <input type="text" name="name" value="test.txt">
+          <textarea name="text"></textarea>
+          <input type="submit" value="Download">
+        </form>
+      </div>
+    </body>
+  </div>
+</body>

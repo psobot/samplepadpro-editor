@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.17">
+    <grammar name="Alesis SamplePad Pro Kit" start="id:1" author="Peter Sobot">
+        <description>Grammar for Alesis SamplePad Pro drum kit files.</description>
+        <scripts>
+            <script name="aaa" type="Grammar" id="78">
+                <source language="Python">def init():
+	print &quot;init&quot;
+
+def processByteArray(byteArray):
+	print &quot;byteArray&quot;
+
+def terminate():
+	print &quot;terminate&quot;
+</source>
+            </script>
+        </scripts>
+        <structure name="Kit" id="1" encoding="ISO_8859-1:1987" endian="big" signed="no">
+            <structure name="Header" id="2">
+                <string name="Token" mustmatch="yes" id="3" type="fixed-length" length="4" encoding="UTF-8">
+                    <fixedvalues>
+                        <fixedvalue name="Token" value="KITH"/>
+                    </fixedvalues>
+                </string>
+                <binary name="&lt;Binary Fill Bytes&gt;" id="4" unused="yes" length="4"/>
+                <number name="Checksum" id="5" type="integer" length="1">
+                    <description>			for(int i=9;i&lt;8320;i++)&#13;
+			{&#13;
+				outThing=outThing+inData[i]&amp;0xff;&#13;
+				outThing=outThing&amp;0xff;&#13;
+			}</description>
+                </number>
+                <binary name="&lt;Binary Fill Bytes&gt;-1" id="6" unused="yes" length="2"/>
+                <number name="Kit Index" id="80" type="integer" length="1"/>
+                <binary name="&lt;Binary Fill Bytes&gt;-1-1" id="81" unused="yes" length="59"/>
+                <number name="Title Sttring Length" id="79" type="integer" length="1"/>
+                <string name="Title" id="7" type="fixed-length" length="8" encoding="ISO_8859-1:1987"/>
+                <binary name="&lt;Binary Fill Bytes-1&gt;" id="8" unused="yes" length="48"/>
+            </structure>
+            <structure name="Internal Block" id="10" length="256" repeatmin="34" repeatmax="34">
+                <string name="Token" mustmatch="yes" id="11" type="fixed-length" length="4" encoding="UTF-8">
+                    <fixedvalues>
+                        <fixedvalue name="Token" value="KITI"/>
+                    </fixedvalues>
+                </string>
+                <binary name="Padding" id="12" length="3">
+                    <fixedvalues>
+                        <fixedvalue name="1" value="01"/>
+                    </fixedvalues>
+                </binary>
+                <number name="Internal/External" id="13" type="integer" length="1">
+                    <fixedvalues>
+                        <fixedvalue name="Internal" value="0"/>
+                        <fixedvalue name="External" value="1"/>
+                    </fixedvalues>
+                </number>
+                <binary name="&lt;new binary-1&gt;" id="14" length="7"/>
+                <number name="Name Length" id="15" type="integer" length="1"/>
+                <string name="Name" id="16" type="fixed-length" length="8" encoding="UTF-8"/>
+                <binary name="&lt;new binary&gt;" id="17" length="9"/>
+                <number name="Pan" id="37" type="integer" length="1"/>
+                <number name="&lt;new number&gt;" id="38" type="integer" length="1"/>
+                <number name="&lt;new number-1&gt;" id="39" type="integer" length="1"/>
+                <number name="&lt;new number-2&gt;" id="40" type="integer" length="1"/>
+                <number name="&lt;new number-3&gt;" id="41" type="integer" length="1"/>
+                <number name="&lt;new number-4&gt;" id="42" type="integer" length="1"/>
+                <number name="&lt;new number-5&gt;" id="43" type="integer" length="1"/>
+                <number name="&lt;new number-6&gt;" id="44" type="integer" length="1"/>
+                <number name="&lt;new number-7&gt;" id="45" type="integer" length="1"/>
+                <number name="&lt;new number-8&gt;" id="46" type="integer" length="1"/>
+                <number name="&lt;new number-9&gt;" id="47" type="integer" length="1"/>
+                <number name="&lt;new number-10&gt;" id="48" type="integer" length="1"/>
+                <number name="&lt;new number-11&gt;" id="49" type="integer" length="1"/>
+                <number name="&lt;new number-12&gt;" id="50" type="integer" length="1"/>
+                <number name="&lt;new number-13&gt;" id="51" type="integer" length="1"/>
+                <number name="&lt;new number-14&gt;" id="52" type="integer" length="1"/>
+                <number name="&lt;new number-15&gt;" id="53" type="integer" length="1"/>
+                <number name="&lt;new number-16&gt;" id="54" type="integer" length="1"/>
+                <number name="&lt;new number-17&gt;" id="55" type="integer" length="1"/>
+                <number name="&lt;new number-18&gt;" id="56" type="integer" length="1"/>
+                <number name="Reverb" id="57" type="integer" length="1"/>
+                <number name="&lt;new number-20&gt;" id="58" type="integer" length="1"/>
+                <number name="Tune" id="18" type="integer" length="1" signed="yes" endian="big"/>
+                <number name="Level" id="25" type="integer" length="1"/>
+                <number name="MIDI Channel" id="24" type="integer" length="1"/>
+                <number name="Velocity Minimum" id="26" type="integer" length="1"/>
+                <number name="Velocity Maximum" id="27" type="integer" length="1"/>
+                <number name="???" id="28" type="integer" length="1"/>
+                <number name="Mode" id="59" type="integer" length="1">
+                    <fixedvalues>
+                        <fixedvalue name="MONO" value="0"/>
+                        <fixedvalue name="POLY" value="1"/>
+                        <fixedvalue name="LOOP" value="2"/>
+                        <fixedvalue name="STOP" value="3"/>
+                        <fixedvalue name="TMP" value="4"/>
+                        <fixedvalue name="CLK" value="5"/>
+                        <fixedvalue name="HAT" value="6"/>
+                    </fixedvalues>
+                </number>
+                <binary name="&lt;Binary Fill Bytes&gt;" id="29" unused="yes" length="1"/>
+                <number name="&lt;New Element&gt;" id="30" type="integer" length="1"/>
+                <number name="&lt;New Element-1&gt;" id="31" type="integer" length="1"/>
+                <number name="Sensitivity" id="32" type="integer" length="1"/>
+                <number name="&lt;New Element-3&gt;" id="33" type="integer" length="1"/>
+                <number name="&lt;New Element-4&gt;" id="34" type="integer" length="1"/>
+                <number name="&lt;New Element-5&gt;" id="35" type="integer" length="1"/>
+                <binary name="&lt;Binary Fill Bytes-1&gt;" id="60" unused="yes" length="4"/>
+                <number name="Mute Group" id="61" type="integer" length="1"/>
+                <binary name="&lt;New Element-6&gt;" id="82" length="2"/>
+                <binary name="&lt;Binary Fill Bytes-2&gt;" id="64" unused="yes" length="54"/>
+                <number name="Sample 1 Vel Min" id="72" type="integer" length="1"/>
+                <number name="Sample 1 Vel Max" id="74" type="integer" length="1"/>
+                <binary name="&lt;Binary Fill Bytes-2&gt;-1" id="73" unused="yes" length="3"/>
+                <number name="Sample 1 File Length" id="65" type="integer" length="1"/>
+                <string name="Sample 1 Filename" id="66" type="fixed-length" length="8" encoding="UTF-8"/>
+                <string name="Sample 1 Human Filename" id="67" type="fixed-length" length="8" encoding="UTF-8"/>
+                <binary name="&lt;Binary Fill Bytes-3&gt;" id="68" unused="yes" length="10"/>
+                <number name="Sample 2 Vel Min" id="75" type="integer" length="1"/>
+                <number name="Sample 2 Vel Max" id="77" type="integer" length="1"/>
+                <binary name="&lt;Binary Fill Bytes-3&gt;-1" id="76" unused="yes" length="3"/>
+                <number name="Sample 2 Filename Length" id="69" type="integer" length="1"/>
+                <string name="Sample 2 Filename" id="70" type="fixed-length" length="8" encoding="UTF-8"/>
+                <string name="Sample 2 Human Filename" id="71" type="fixed-length" length="8" encoding="UTF-8"/>
+            </structure>
+        </structure>
+    </grammar>
+</ufwb>
